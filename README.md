@@ -1,6 +1,6 @@
 ﻿# AutoObfuscator
 
-This respository contians Node.js code which'll allow for automatic on-save Obfuscation for external JS files [1] and Uglification for external CSS files [2]. A watch [3] is applied [3], so that, when the user saves a file ending with `*-preugly.js` or `*-preugly.css` (or whatever suffix user changes it to in the code, by changing `const suffix`), an obfuscated/uglified copy is created in the same directory without the `-preugly` suffix. The user can change the code to save to a different directory if they wish, by programmatcially manipulating `const outputFile`.
+This respository contians Node.js code which'll allow for automatic on-save Obfuscation for external JS files [1] and Uglification for external CSS files [2]. A watch is applied [3], so that, when the user saves a file ending with `*-preugly.js` or `*-preugly.css` (or whatever suffix user changes it to in the code, by changing `const suffix`), an obfuscated/uglified copy is created in the same directory without the `-preugly` suffix. The user can change the code to save to a different directory if they wish, by programmatcially manipulating `const outputFile`.
 
 First of all, the user should have Node.js installed on their device. After cloning this repository, they should run the following command to download all the required packages.
 
