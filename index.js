@@ -1,5 +1,6 @@
 const fs = require('fs');
 const path = require('path');
+const uglifycss = require('uglifycss');
 const JavaScriptObfuscator = require('javascript-obfuscator');
 const chokidar = require('chokidar');
 
