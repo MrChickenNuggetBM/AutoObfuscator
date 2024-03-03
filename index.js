@@ -4,10 +4,12 @@ const uglifycss = require('uglifycss');
 const JavaScriptObfuscator = require('javascript-obfuscator');
 const chokidar = require('chokidar');
 
+const suffix = "-preugly";
+
 // Function to obfuscate JavaScript files
 function obfuscateJS(file) {
     const inputFile = file;
-    const outputFile = file.replace("-preugly.js", ".js");
+    const outputFile = file.replace(suffix, "");
 
     const code = fs.readFileSync(inputFile, 'utf8');
     const result = JavaScriptObfuscator.obfuscate(code, {
@@ -36,7 +38,7 @@ function obfuscateJS(file) {
 // Function to minify CSS files
 function minifyCSS(file) {
     const inputFile = file;
-    const outputFile = file.replace("-preugly.css", ".css");
+    const outputFile = file.replace(suffix, "");
 
     const code = fs.readFileSync(inputFile, 'utf8');
     const result = uglifycss.processString(code);
@@ -61,7 +63,7 @@ const watcher = chokidar.watch(serverDirectory, {
 });
 
 watcher.on('change', (filePath) => {
-    if (filePath.search("-preugly") == -1) return;
+    if (filePath.search(suffix) == -1) return;
 
     const ext = path.extname(filePath);
     if (ext === '.js' || ext === '.css') {
