@@ -7,7 +7,7 @@ File saves are watched for [3] and the obfuscation/uglification is done on the s
 The watcher is, by default, set to watch for changes in all files (or technically files within 99 nested layers) within the `path/to/server/directory` directory.
 The user should change this to their server directory if they wish for this default behaviour.
 
-If the user wants to change this default behaviour to, for example, watch for changes to ***particular*** files or directories within their server, they should consult [3] and change the following lines of code accordingly:
+If the user wants to change this default behaviour to, for example, watch for changes to ***particular*** files or directories within their server, they should consult [3] and change the following lines of code accordingly (index.js):
 
 ```
 // Watch all JS and CSS files on the server
@@ -19,7 +19,7 @@ const watcher = chokidar.watch(serverDirectory, {
 });
 ```
 
-The default settings for the javascript obfuscation is shown below. If the user wishes to change this for their own use, they should consult [1]; then find and change the following block of code accordingly [1].
+The default settings for the javascript obfuscation is shown below. If the user wishes to change this for their own use, they should consult [1]; then find and change the following block of code accordingly [1] (index.js).
 
 ```
 const result = JavaScriptObfuscator.obfuscate(code, {
