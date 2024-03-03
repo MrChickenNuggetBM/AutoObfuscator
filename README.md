@@ -1,5 +1,7 @@
 ﻿# AutoObfuscator
 
+All suggested changes within this README.md address the index.js file.
+
 This respository contians Node.js code which'll allow for automatic on-save Obfuscation for external JS files [1] and Uglification for external CSS files [2]. A watch is applied [3], so that, when the user saves a file ending with `*-preugly.js` or `*-preugly.css` (or whatever suffix user changes it to in the code, by changing `const suffix`), an obfuscated/uglified copy is created in the same directory without the `-preugly` suffix. The user can change the code to save to a different directory if they wish, by programmatcially manipulating `const outputFile`.
 
 First of all, the user should have Node.js installed on their device. After cloning this repository, they should run the following command to download all the required packages.
@@ -11,7 +13,7 @@ npm install
 The watcher is, by default, set to watch for changes in all files (or technically files within 99 nested layers) within the `path/to/server/directory` directory.
 The user should change this to their server directory if they wish for this default behaviour.
 
-If the user wants to change this default behaviour to, for example, watch for changes to ***particular*** files or directories within their server, they should consult [3] and change the following lines of code accordingly (index.js):
+If the user wants to change this default behaviour to, for example, watch for changes to ***particular*** files or directories within their server, they should consult [3] and change the following lines of code accordingly:
 
 ```
 // Watch all JS and CSS files on the server
@@ -23,7 +25,7 @@ const watcher = chokidar.watch(serverDirectory, {
 });
 ```
 
-The default settings for the javascript obfuscation is shown below. If the user wishes to change this for their own use, they should consult [1]; then find and change the following block of code accordingly [1] (index.js).
+The default settings for the javascript obfuscation is shown below. If the user wishes to change this for their own use, they should consult [1]; then find and change the following block of code accordingly [1].
 
 ```
 const result = JavaScriptObfuscator.obfuscate(code, {
